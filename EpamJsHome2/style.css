@@ -1,0 +1,23 @@
+.container {
+    width: 100%;
+    height: 600px;
+
+}
+.header {
+    height: 98px;
+    width: inherit;
+    border-bottom: 2px  solid black;
+    text-align: center;
+    font-size: 2em;
+}
+#roles {
+    height: 400px;
+    width: inherit;
+    border-bottom: 2px solid black;
+    overflow-y: auto;
+}
+.footer {
+    height: 98px;
+    width: inherit;
+    border-bottom: 2px solid black;
+}
