@@ -112,7 +112,32 @@ const newArr = [{
     name: "HTC One X10 Dual Sim Silver"
 }, {ratingRevievs: "18 отзывов", price: {oldUan: "5 999 грн", newUan: "4 999 грн"}, name: "Sony Xperia L1 Dual Black"}];
 
-console.log(newArr.sort(function (a, b) {
-    return a.price - b.price;
-}));
-objs.sort((a, b) => a.last_nom.localeCompare(b.last_nom));
+function sortByComments(arr) {
+    arr.sort((a, b) => {
+        let a1 = +a.ratingRevievs.split(' ')[0];
+        let b1 = +b.ratingRevievs.split(' ')[0];
+        if (a1 > b1) {
+            return 1;
+        }
+        if (a1 < b1) {
+            return -1;
+        }
+        return 0;
+    })
+}
+
+//sortByComments(newArr);
+//console.log(newArr);
+
+function sortByPrice(arr) {
+    arr.sort((a, b) => {
+        function parse(el) {
+            return parseInt((el.price.newUan || el.price).split(' ').join(''))
+        }
+
+        return parse(a) - parse(b);
+    })
+}
+
+sortByPrice(newArr);
+console.log(newArr);
